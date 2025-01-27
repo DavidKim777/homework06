@@ -44,8 +44,6 @@ handle_call({TableName, Key}, _From, State) ->
   Value = case Res of
     {Key, #cashe{value = Value1, expire_time = undefined}} ->
       Value1;
-    {Key, #cashe{value =  Value1, expire_time = ExpireTime}} when ExpireTime == undefined ->
-      Value1;
     {Key, #cashe{value =  Value1, expire_time = ExpireTime}} when is_integer(ExpireTime), ExpireTime > CurrentTime ->
       Value1;
     _ -> undefined
