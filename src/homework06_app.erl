@@ -5,7 +5,7 @@
 -export([stop/1]).
 
 start(_Type, _Args) ->
-	homework06_sup:start_link().
+	  homework06_sup:start_link().
 
 stop(_State) ->
-	ok.
+	  ok.
