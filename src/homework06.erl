@@ -64,7 +64,7 @@ lookup_ets(Key) ->
     TimeNow = calendar:universal_time(),
     CurrentTime = calendar:datetime_to_gregorian_seconds(TimeNow),
     Res = ets:lookup(?TABLE_NAME, Key),
-    io:format("🔍 ETS Lookup Result for ~p: ~p~n", [Key, Res]),
+    io:format("ETS Lookup Result for ~p: ~p~n", [Key, Res]),
     case Res of
         [{Key, #cache{value = Value1, expire_time = undefined}}] ->
             {ok, Value1};
